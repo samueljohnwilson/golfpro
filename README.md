@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# golfpro
+A web app that allows golfers to upload their scores, view statistics, and compare with others
 
 ## Available Scripts
 
