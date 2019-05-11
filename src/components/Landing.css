@@ -13,9 +13,9 @@
   height: 400px;
 }
 
-.button {
+.primary-button {
   display: inline-block;
-  background-color: #556d7c;
+  background-color: #197700;
   border: none;
   border-radius: 4px;
   color: #fffaf0;
@@ -28,6 +28,10 @@
   cursor: pointer;
 }
 
-.button > text {
+.primary-button:active {
+  background-color: #209800;
+}
+
+.primary-button > text {
   display: inline-block;
 }

@@ -7,12 +7,12 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing-container">
-        <img src={background} className="background-image" alt="background" />
-        <button className="button">
+        <img src={ background } className="background-image" alt="background" />
+        <button className="primary-button">
           Sign up
           {/* <img src={forwardIcon} className="forward-icon" alt="forward-icon" /> */}
         </button>
-        <button className="button">
+        <button className="primary-button">
           Log in
           {/* <img src={forwardIcon} className="forward-icon" alt="forward-icon" /> */}
         </button>

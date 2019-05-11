@@ -1,3 +1,12 @@
 .logo {
-  max-width: 60%;
+  height: 60px;
+  margin: 8px 0 8px 0;
+}
+
+.LeftDrawer-root-1 .LeftDrawer-menuButton-4  {
+  margin-right: 0;
+}
+
+.MuiToolbar-root-47 {
+  background-color: black;
 }
