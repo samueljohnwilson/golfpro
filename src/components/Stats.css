@@ -1,0 +1,11 @@
+.stats-container {
+  background-image: url(../assets/background.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100vh;
+  background-position: center;
+}
+
+.column {
+  display: flex;
+  flex: 50%;
+}
