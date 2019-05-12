@@ -27,8 +27,6 @@ class Main extends Component {
       display = <Landing loginClick={this.loginClick}/>
     }
 
-    console.log(display)
-
     return (
       <div>{display}</div>
     );
