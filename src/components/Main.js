@@ -11,11 +11,16 @@ class Main extends Component {
     };
 
     this.loginClick = this.loginClick.bind(this);
+    this.signUpClick = this.signUpClick.bind(this);
   }
 
   loginClick() {
     this.setState({isLoggedIn: true})
   };
+
+  signUpClick() {
+    this.setState({})
+  }
 
   render() {
     const isLoggedIn = this.state.isLoggedIn;
