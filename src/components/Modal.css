@@ -5,13 +5,28 @@
 }
 
 .modal {
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  text-align: center;
   width: 80%;
-  max-height: 80px;
-  background-color: floralwhite;
-  box-shadow: black;
-  padding: 10px;
-  outline: 'none';
+  max-width: 600px;
+  border-radius: 6px;
+  background-color: #fffaf0;
+  box-shadow: #000000;
+  padding: 12px;
+}
+
+.modal .input {
+  font: Roboto;
+  width: 100%;
+}
+
+.modal p {
+  margin: 0;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-logo {
+  height: 24px;
 }
