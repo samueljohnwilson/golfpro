@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BaseModal from './Modal';
+import LandingModal from './LandingModal';
 import background from '../assets/background-with-logo.png';
 
 import './Main.css';
@@ -8,7 +8,6 @@ class Landing extends Component {
   constructor(props) {
     super(props);
     this.state  = {
-      isLoggedIn: false,
       showLoginModal: false,
       showSignInModal: false,
     };
@@ -28,16 +27,21 @@ class Landing extends Component {
   render() {
     return (
       <div className="container landing-container">
-        <BaseModal 
-          showLoginModal={this.state.showLoginModal} 
-          toggleLoginModal={this.toggleLoginModal} 
-          toggleSignInModal={this.toggleSignInModal}
+        <LandingModal
+          type="login"
+          showModal={this.state.showLoginModal} 
+          toggleModal={this.toggleLoginModal} 
+        />
+        <LandingModal
+          type="signin"
+          showModal={this.state.showSignInModal} 
+          toggleModal={this.toggleSignInModal} 
         />
         <img src={background} className="background-image" alt="background" />
-        <button className="primary-button" onClick={this.toggleSignInModal}>
+        <button className="button primary-button" onClick={this.toggleSignInModal}>
           Sign up
         </button>
-        <button className="primary-button" onClick={this.toggleLoginModal}>
+        <button className="button primary-button" onClick={this.toggleLoginModal}>
           Log in
         </button>
       </div>
