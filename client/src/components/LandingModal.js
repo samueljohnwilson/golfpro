@@ -23,13 +23,13 @@ class LandingModal extends React.Component {
 
   render() {
     const image = this.props.type === "login" ? login : signup;
-    const textSource = this.props.type === "login" ? ["Email", "Password"] : ["First name", "Last name", "Email", "Password"];
-    const valueSource = this.props.type === "login" ? ["email", "password"] : ["firstName", "lastName", "email", "password"];
+    const labels = this.props.type === "login" ? ["Email", "Password"] : ["First name", "Last name", "Email", "Password"];
+    const values = this.props.type === "login" ? ["email", "password"] : ["firstName", "lastName", "email", "password"];
     const textField = [];
     
-    for (let i = 0; i < textSource.length; i++) {
-      const label = textSource[i];
-      const value = this.state[valueSource[i]];
+    for (let i = 0; i < labels.length; i++) {
+      const label = labels[i];
+      const value = this.state[values[i]];
       textField.push(
         <TextField
           label={label}
