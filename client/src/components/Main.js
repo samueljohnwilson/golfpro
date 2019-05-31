@@ -5,7 +5,7 @@ import Stats from './Stats';
 
 class Main extends Component {
   render() {
-    const isLoggedIn = false;
+    const isLoggedIn = true;
     let display;
     
     if (isLoggedIn) {
