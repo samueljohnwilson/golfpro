@@ -15,8 +15,10 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import GolfCourse from '@material-ui/icons/GolfCourse';
+import AccountBox from '@material-ui/icons/AccountBox';
+import Poll from '@material-ui/icons/Poll';
+import Dashboard from '@material-ui/icons/Dashboard'
 
 import logo from '../assets/golf-logo-title-white-no-sig.png';
 import './Header.css';
@@ -134,10 +136,27 @@ class LeftDrawer extends React.Component {
           </div>
           <Divider />
           <List>
-            {['Profile', 'My stats', 'My courses', 'View rankings'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
+            {[
+              {
+                title: 'Profile', 
+                icon: <AccountBox />,
+              }, 
+              {
+                title: 'My stats',
+                icon: <Poll />,
+              }, 
+              {
+                title: 'Courses',
+                icon: <GolfCourse />,
+              }, 
+              {
+                title: 'View rankings',
+                icon: <Dashboard />,
+              }
+            ].map((item, index) => (
+              <ListItem button key={item.title}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.title} />
               </ListItem>
             ))}
           </List>
