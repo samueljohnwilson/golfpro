@@ -2,21 +2,33 @@ import React, { Component } from 'react';
 import Avatar from '@material-ui/core/Avatar'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+import Divider from '@material-ui/core/Divider';
 
 import './Main.css';
 import './Stats.css';
+import defaultAvatar from '../assets/avatar.jpeg'
 
-class Stats extends Component {
+class StatCard extends Component {
   render() {
+    const profilePic = defaultAvatar;
+    const username = 'Al User';
     return (
-    <div className="container stats-container">
+    <div className="container statcard-container">
       <Card className="profile-card">
         <CardContent>
-          <Avatar 
-            alt={this.props.username} 
-            src={this.props.profilePic} 
-            className="avatar"
+          <CardHeader
+            avatar={
+              <Avatar 
+                alt={this.props.username} 
+                src={profilePic} 
+                className="avatar"
+              />
+            }
+
+            title={username}
           />
+          <Divider />
           <button className="button primary-button">Add stats</button>
         </CardContent>
       </Card>
@@ -25,4 +37,4 @@ class Stats extends Component {
   }
 }
 
-export default Stats;
+export default StatCard;
