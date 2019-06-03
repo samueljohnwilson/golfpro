@@ -28,7 +28,7 @@ const drawerWidth = 240;
 const styles = theme => ({
   root: {
     display: 'flex',
-    color: '#000',
+    backgroundColor: '#000',
     height: '76px',
   },
   appBar: {
