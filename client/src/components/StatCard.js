@@ -6,13 +6,13 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Divider from '@material-ui/core/Divider';
 
 import './Main.css';
-import './Stats.css';
+import './StatCard.css';
 import defaultAvatar from '../assets/avatar.jpeg'
 
 class StatCard extends Component {
   render() {
     const profilePic = defaultAvatar;
-    const username = 'Al User';
+    const username = 'Jared Siminoff';
     return (
     <div className="container statcard-container">
       <Card className="profile-card">
@@ -27,6 +27,8 @@ class StatCard extends Component {
             }
 
             title={username}
+            classes={{title: 'avatar-title'}}
+            className="avatar-header"
           />
           <Divider />
           <button className="button primary-button">Add stats</button>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Landing from './Landing';
 import Header from './Header';
-import Stats from './Stats';
+import StatCard from './StatCard';
 
 class Main extends Component {
   render() {
@@ -9,7 +9,7 @@ class Main extends Component {
     let display;
     
     if (isLoggedIn) {
-      display = <div><Header /><Stats /></div>
+      display = <div><Header /><StatCard /></div>
     } else {
       display = <Landing />
     }

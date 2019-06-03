@@ -9,3 +9,12 @@
   display: flex;
   flex: 50%;
 }
+
+.profile-card {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.profile-card .avatar-title {
+  font-size: 28px;
+}
