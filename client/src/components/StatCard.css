@@ -15,6 +15,10 @@
   text-align: center;
 }
 
-.profile-card .avatar-title {
+.avatar-header .avatar-title {
   font-size: 28px;
+}
+
+.avatar-header .avatar {
+  width: 60px;
 }
