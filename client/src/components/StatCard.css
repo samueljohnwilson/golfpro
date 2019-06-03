@@ -11,6 +11,8 @@
 }
 
 .profile-card {
+  min-width: 280px;
+  max-width: 90%;
   margin-top: 40px;
   text-align: center;
 }
@@ -20,5 +22,6 @@
 }
 
 .avatar-header .avatar {
-  width: 60px;
+  width: 80px;
+  height: 80px;
 }
