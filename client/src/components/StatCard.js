@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Divider from '@material-ui/core/Divider';
 
+import DataTable from './DataTable'
 import './Main.css';
 import './StatCard.css';
 import defaultAvatar from '../assets/avatar.jpeg'
@@ -31,6 +32,7 @@ class StatCard extends Component {
             className="avatar-header"
           />
           <Divider />
+          <DataTable />
           <button className="button primary-button">Add stats</button>
         </CardContent>
       </Card>

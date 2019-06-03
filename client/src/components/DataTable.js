@@ -10,9 +10,28 @@ class DataTable extends Component {
   //   super();
   // }
   render() {
+    function createData(name, calories, fat, carbs, protein) {
+      return { name, calories, fat, carbs, protein };
+    }
+    
+    const rows = [
+      createData('Holes played', 72),
+      createData('Best round', -2),
+    ];
+
     return (
-      <div className="data-table">
-      </div>
+      <Table className="data-table">
+        <TableBody>
+          {rows.map(row => (
+            <TableRow key={row.name}>
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.calories}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
     );
   }
 }
