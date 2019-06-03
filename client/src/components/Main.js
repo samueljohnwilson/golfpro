@@ -9,13 +9,13 @@ class Main extends Component {
     let display;
     
     if (isLoggedIn) {
-      display = <div><Header /><StatCard /></div>
+      display = <div className="main-inner-wrapper"><Header /><StatCard /></div>
     } else {
-      display = <Landing />
+      display = <div className="main-inner-wrapper"><Landing /></div>
     }
 
     return (
-      <div>{display}</div>
+      <div className="main-wrapper">{display}</div>
     );
   }
 }
