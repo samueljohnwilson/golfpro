@@ -15,12 +15,11 @@ class Landing extends Component {
     this.toggleModal = this.toggleModal.bind(this);
   }
 
-  toggleModal(e) {
-    if (e) {
-      this.setState({ modalId: e.currentTarget.id });
-    }
-
-    this.setState({ showModal: !this.state.showModal });
+  toggleModal(event) {
+    this.setState({ 
+      modalId: event.currentTarget.id,
+      showModal: !this.state.showModal
+    });
   };
 
   render() {

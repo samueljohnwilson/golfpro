@@ -20,8 +20,8 @@ class LandingModal extends React.Component {
     this.setState({ [event.target.id]: event.target.value });
   }
 
-  handleClose = () => {
-    this.props.toggleModal();
+  handleClose = (event) => {
+    this.props.toggleModal(event);
   };
 
   componentDidUpdate(prevProps) {
@@ -52,7 +52,6 @@ class LandingModal extends React.Component {
           label={label}
           className="input"
           id={values[i]}
-          value=""
           margin="normal"
           variant="outlined"
           onChange={this.handleChange}

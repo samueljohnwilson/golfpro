@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+
 import Landing from './Landing';
 import Header from './Header';
 import StatCard from './StatCard';
 
 class Main extends Component {
   render() {
-    const isLoggedIn = true;
+    const isLoggedIn = false;
     let display;
     
     if (isLoggedIn) {
