@@ -1,3 +1,7 @@
+.content-wrapper.landing {
+  justify-content: center;
+}
+
 .modal-container {
   display: flex;
   justify-content: center;
