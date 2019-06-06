@@ -2,7 +2,7 @@ body {
   overflow: hidden;
 }
 
-.container {
+.content-wrapper {
   background-color: #000000;
   color: #fffaf0;
   height: 100vh;

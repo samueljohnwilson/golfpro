@@ -4,7 +4,7 @@ import Courses from './Courses';
 import Profile from './Profile';
 import Rankings from './Rankings';
 import Stats from './Stats';
-import StatCard from './StatCard';
+import UserOutline from './UserOutline';
 
 
 class Content extends Component {
@@ -16,7 +16,7 @@ class Content extends Component {
   }
 
   render() {
-    let content = <StatCard />;
+    let content = <UserOutline />;
     switch (this.state.content) {
       case 'profile': content = <Profile />;
         break;
@@ -30,7 +30,7 @@ class Content extends Component {
       case 'rankings': content = <Rankings />;
         break;
 
-      default: content = <StatCard />;
+      default: content = <UserOutline />;
         break;
     }
 

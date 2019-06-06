@@ -7,15 +7,16 @@ import Divider from '@material-ui/core/Divider';
 
 import DataTable from './DataTable'
 import './Main.css';
-import './StatCard.css';
+import './UserOutline.css';
+
 import defaultAvatar from '../assets/avatar.jpeg'
 
-class StatCard extends Component {
+class UserOutline extends Component {
   render() {
     const profilePic = defaultAvatar;
     const username = 'Jared Siminoff';
+
     return (
-    <div className="container statcard-container">
       <Card className="profile-card">
         <CardContent>
           <CardHeader
@@ -26,19 +27,19 @@ class StatCard extends Component {
                 className="avatar"
               />
             }
-
             title={username}
-            classes={{title: 'avatar-title'}}
+            classes={{ title: 'avatar-title' }}
             className="avatar-header"
           />
           <Divider />
           <DataTable />
-          <button className="button primary-button">Add stats</button>
+          <button className="button primary-button">
+            Add stats
+          </button>
         </CardContent>
       </Card>
-    </div>
     );
   }
 }
 
-export default StatCard;
+export default UserOutline;
