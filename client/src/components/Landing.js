@@ -53,7 +53,11 @@ class Landing extends Component {
           id={this.state.modalId}
           toggleModal={this.toggleModal} 
         />
-        <img src={background} className="background-image" alt="background" />
+        <img 
+          src={background}
+          className="background-image"
+          alt="background"
+        />
         {buttons}
       </div>
     );

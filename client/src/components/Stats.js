@@ -4,6 +4,7 @@ class Stats extends Component {
   render() {
     return (
       <div className="content-inner-wrapper">
+        Stats
       </div>
     );
   }
