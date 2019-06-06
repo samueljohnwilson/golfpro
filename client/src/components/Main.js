@@ -1,16 +1,55 @@
 import React, { Component } from 'react';
 
-import Landing from './Landing';
+import Courses from './Courses';
 import Header from './Header';
-import Content from './Content'
+import Landing from './Landing';
+import Profile from './Profile';
+import Rankings from './Rankings';
+import Stats from './Stats';
+import UserOutline from './UserOutline';
 
 class Main extends Component {
+  constructor() {
+    super();
+    this.state = {
+      content: 'user',
+    }
+
+    this.selectContent = this.selectContent.bind(this);
+  }
+
+  selectContent(event) {
+    this.setState({ content: event.currentTarget.id });
+  }
+
   render() {
     const isLoggedIn = true;
+    let content = <UserOutline />;
+
+    switch (this.state.content) {
+      case 'profile': content = <Profile />;
+        break;
+
+      case 'stats': content = <Stats />;
+        break;
+
+      case 'courses': content = <Courses />;
+        break;
+      
+      case 'rankings': content = <Rankings />;
+        break;
+
+      case 'user': content = <UserOutline />;
+        break;
+
+      default: content = <UserOutline />;
+        break;
+    }
+
     let display;
     
     if (isLoggedIn) {
-      display = <div className="main-inner-wrapper"><Header /><Content /></div>
+      display = <div className="main-inner-wrapper"><Header selectContent={this.selectContent}/>{content}</div>
     } else {
       display = <div className="main-inner-wrapper"><Landing /></div>
     }
