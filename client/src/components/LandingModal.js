@@ -45,22 +45,20 @@ class LandingModal extends React.Component {
 
     const { image, labels, values } = this.props.id === "login" ? login : signup;
     const textField = [];
-    
-    for (let i = 0; i < labels.length; i++) {
-      const label = labels[i];
-      const value = values[i];
+
+    labels.forEach((label, i) => {
       textField.push(
         <TextField
           label={label}
           className="input"
-          id={value}
+          id={values[i]}
           value=""
           margin="normal"
           variant="outlined"
           onChange={this.handleChange}
         />
       )
-    }
+    });
 
     return (
       <div>
