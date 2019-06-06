@@ -7,9 +7,18 @@ import signup from '../assets/signup.png';
 import './LandingModal.css'
 
 class LandingModal extends React.Component {
-  state = {
-    open: this.props.showLoginModal,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: this.props.showLoginModal,
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ [event.target.id]: event.target.value });
+  }
 
   handleClose = () => {
     this.props.toggleModal();
@@ -29,14 +38,16 @@ class LandingModal extends React.Component {
     
     for (let i = 0; i < labels.length; i++) {
       const label = labels[i];
-      const value = this.state[values[i]];
+      const value = values[i];
       textField.push(
         <TextField
           label={label}
           className="input"
-          value={value}
+          id={value}
+          value=""
           margin="normal"
           variant="outlined"
+          onChange={this.handleChange}
         />
       )
     }
