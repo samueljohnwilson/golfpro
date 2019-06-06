@@ -142,21 +142,30 @@ class LeftDrawer extends React.Component {
               {
                 title: 'Profile', 
                 icon: <AccountBox />,
+                id: 'profile',
               }, 
               {
                 title: 'My stats',
                 icon: <Poll />,
+                id: 'stats',
               }, 
               {
                 title: 'Courses',
                 icon: <GolfCourse />,
+                id: 'courses',
               }, 
               {
                 title: 'View rankings',
                 icon: <Dashboard />,
+                id: 'rankings',
               }
             ].map((item, index) => (
-              <ListItem button key={item.title}>
+              <ListItem 
+                button 
+                key={item.title}
+                id={item.id}
+                onClick={this.props.selectContent}
+              >
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.title} />
               </ListItem>
