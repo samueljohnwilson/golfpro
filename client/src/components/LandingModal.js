@@ -2,8 +2,8 @@ import React from 'react';
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 
-import login from '../assets/login.png';
-import signup from '../assets/signup.png';
+import loginImg from '../assets/login.png';
+import signupImg from '../assets/signup.png';
 import './LandingModal.css'
 
 class LandingModal extends React.Component {
@@ -31,9 +31,19 @@ class LandingModal extends React.Component {
   }
 
   render() {
-    const image = this.props.type === "login" ? login : signup;
-    const labels = this.props.type === "login" ? ["Email", "Password"] : ["First name", "Last name", "Email", "Password"];
-    const values = this.props.type === "login" ? ["email", "password"] : ["firstName", "lastName", "email", "password"];
+    const login = {
+      labels: ["Email", "Password"],
+      values: ["email", "password"],
+      image: loginImg,
+    }
+
+    const signup = {
+      labels: ["First name", "Last name", "Email", "Password"],
+      values: ["firstName", "lastName", "email", "password"],
+      image: signupImg,
+    }
+
+    const { image, labels, values } = this.props.id === "login" ? login : signup;
     const textField = [];
     
     for (let i = 0; i < labels.length; i++) {

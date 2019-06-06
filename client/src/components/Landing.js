@@ -1,49 +1,61 @@
 import React, { Component } from 'react';
+
 import LandingModal from './LandingModal';
 import background from '../assets/background-with-logo.png';
-
 import './Main.css';
 
 class Landing extends Component {
   constructor(props) {
     super(props);
     this.state  = {
-      showLoginModal: false,
-      showSignInModal: false,
+      showModal: false,
+      modalId: '',
     };
 
-    this.toggleLoginModal = this.toggleLoginModal.bind(this);
-    this.toggleSignInModal = this.toggleSignInModal.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
-  toggleLoginModal() {
-    this.setState({showLoginModal: !this.state.showLoginModal})
+  toggleModal(e) {
+    if (e) {
+      this.setState({ modalId: e.currentTarget.id });
+    }
+
+    this.setState({ showModal: !this.state.showModal });
   };
 
-  toggleSignInModal() {
-    this.setState({showSignInModal: !this.state.showSignInModal})
-  }
-
   render() {
+    const buttons = [];
+
+    ([
+      { 
+        id: 'signup',
+        text: 'Sign up'
+      },
+      { 
+        id: 'login',
+        text: 'Log in'
+      },
+    ]).forEach((button) => {
+      buttons.push(
+        <button 
+          className="button primary-button"
+          id={button.id}
+          onClick={this.toggleModal}
+        >
+          {button.text}
+        </button>
+      )
+    })
+
     return (
       <div className="container landing-container">
         <LandingModal
-          type="login"
-          showModal={this.state.showLoginModal} 
-          toggleModal={this.toggleLoginModal} 
-        />
-        <LandingModal
-          type="signin"
-          showModal={this.state.showSignInModal} 
-          toggleModal={this.toggleSignInModal} 
+          showModal={this.state.showModal}
+          id={this.state.modalId}
+          toggleModal={this.toggleModal} 
         />
         <img src={background} className="background-image" alt="background" />
-        <button className="button primary-button" onClick={this.toggleSignInModal}>
-          Sign up
-        </button>
-        <button className="button primary-button" onClick={this.toggleLoginModal}>
-          Log in
-        </button>
+        {buttons}
       </div>
     );
   }
