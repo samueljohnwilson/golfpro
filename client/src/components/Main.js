@@ -6,7 +6,7 @@ import Landing from './Landing';
 import Profile from './Profile';
 import Rankings from './Rankings';
 import Stats from './Stats';
-import UserOutline from './UserOutline';
+import Profile from './Profile';
 
 class Main extends Component {
   constructor() {
@@ -24,7 +24,7 @@ class Main extends Component {
 
   render() {
     const isLoggedIn = true;
-    let content = <UserOutline />;
+    let content = <Profile />;
 
     switch (this.state.content) {
       case 'profile': content = <Profile />;
@@ -39,10 +39,10 @@ class Main extends Component {
       case 'rankings': content = <Rankings />;
         break;
 
-      case 'user': content = <UserOutline />;
+      case 'user': content = <Profile />;
         break;
 
-      default: content = <UserOutline />;
+      default: content = <Profile />;
         break;
     }
 
