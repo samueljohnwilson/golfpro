@@ -10,6 +10,7 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import CancelIcon from '@material-ui/icons/Cancel';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
@@ -27,8 +28,7 @@ const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
-    display: 'flex',
-    height: '76px',
+    width: '0px',
   },
   appBar: {
     backgroundColor: '#000',
@@ -88,6 +88,11 @@ class LeftDrawer extends React.Component {
   state = {
     open: false,
   };
+
+  handleClick = (event) => {
+    this.props.selectContent(event);
+    this.handleDrawerClose();
+  }
 
   handleDrawerOpen = () => {
     this.setState({ open: true });
@@ -158,18 +163,29 @@ class LeftDrawer extends React.Component {
                 title: 'View rankings',
                 icon: <Dashboard />,
                 id: 'rankings',
-              }
+              },
             ].map((item, index) => (
               <ListItem 
                 button 
-                key={item.title}
+                key={item.id}
                 id={item.id}
-                onClick={this.props.selectContent}
+                onClick={this.handleClick}
               >
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.title} />
               </ListItem>
             ))}
+            <ListItem 
+                button 
+                key="logout"
+                id="logout"
+                onClick={this.props.logout}
+              >
+                <ListItemIcon>
+                  <CancelIcon />
+                </ListItemIcon>
+                <ListItemText primary="Log out" />
+              </ListItem>
           </List>
         </Drawer>
         <main
