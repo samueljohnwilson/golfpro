@@ -49,9 +49,9 @@ class Main extends Component {
     let display;
     
     if (isLoggedIn) {
-      display = <div className="main-inner-wrapper"><Header selectContent={this.selectContent}/>{content}</div>
+      display = <div className="content-wrapper"><Header selectContent={this.selectContent}/>{content}</div>
     } else {
-      display = <div className="main-inner-wrapper"><Landing /></div>
+      display = <div className="content-wrapper"><Landing /></div>
     }
 
     return (

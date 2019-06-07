@@ -47,7 +47,7 @@ class Landing extends Component {
     })
 
     return (
-      <div className="content-wrapper landing">
+      <div className="landing-wrapper">
         <LandingModal
           showModal={this.state.showModal}
           id={this.state.modalId}
