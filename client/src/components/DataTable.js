@@ -5,28 +5,33 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
 class DataTable extends Component {
-  // constructor() {
-  //   super();
-  // }
-  render() {
-    function createData(name, calories, fat, carbs, protein) {
-      return { name, calories, fat, carbs, protein };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: this.props.data,
     }
+  }
+
+  render() {
+    // function createData(label, value) {
+    //   return { label, value };
+    // }
     
-    const rows = [
-      createData('Holes played', 72),
-      createData('Best round', -2),
-    ];
+    // const rows = [
+    //   createData('Holes played', 72),
+    //   createData('Best round', -2),
+    // ];
 
     return (
       <Table className="data-table">
         <TableBody>
-          {rows.map(row => (
-            <TableRow key={row.name}>
+          {this.state.data.map(row => (
+            <TableRow key={row.label}>
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.label}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell align="right">{row.value}</TableCell>
             </TableRow>
           ))}
         </TableBody>

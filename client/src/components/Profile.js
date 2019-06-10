@@ -16,8 +16,21 @@ class Profile extends Component {
     const profilePic = defaultAvatar;
     const username = 'Jared Siminoff';
 
+    const data = [
+      {
+        name: 'Jared',
+        handicap: 3,
+        plusMinus: -4,
+      },
+      {
+        name: 'Jared',
+        handicap: 3,
+        plusMinus: -4,
+      }
+    ]
+
     return (
-      <Card className="profile-card">
+      <Card className="card">
         <CardContent>
           <CardHeader
             avatar={
@@ -32,7 +45,7 @@ class Profile extends Component {
             className="avatar-header"
           />
           <Divider />
-          <DataTable />
+          <DataTable data={data}/>
           <button className="button primary-button">
             Add stats
           </button>

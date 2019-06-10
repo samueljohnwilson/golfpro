@@ -60,23 +60,21 @@ class LandingModal extends React.Component {
     });
 
     return (
-      <div>
-        <Modal
-          open={this.state.open}
-          onClose={this.handleClose}
-          className="modal-container"
-        >
-          <div className="modal">
-            <img src={image} className="modal-heading" alt="modal-heading" />
-            <form className="modal-form">
-              {textField}
-              <button className="button secondary-button" onClick={this.toggleLoginModal}>
-                Submit
-              </button>
-            </form>
-          </div>
-        </Modal>
-      </div>
+      <Modal
+        open={this.state.open}
+        onClose={this.handleClose}
+        className="modal-container"
+      >
+        <div className="modal">
+          <img src={image} className="modal-heading" alt="modal-heading" />
+          <form className="modal-form">
+            {textField}
+            <button className="button secondary-button" onClick={this.toggleLoginModal}>
+              Submit
+            </button>
+          </form>
+        </div>
+      </Modal>
     );
   }
 }

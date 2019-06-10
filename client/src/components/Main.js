@@ -6,7 +6,6 @@ import Landing from './Landing';
 import Profile from './Profile';
 import Rankings from './Rankings';
 import Stats from './Stats';
-import Profile from './Profile';
 
 class Main extends Component {
   constructor() {
