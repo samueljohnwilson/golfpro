@@ -15,17 +15,17 @@ class Profile extends Component {
   render() {
     const profilePic = defaultAvatar;
     const username = 'Jared Siminoff';
-
+    const columns = ['Name', 'Handicap', '+/-']
     const data = [
       {
-        name: 'Jared',
+        label: 'Jared',
         handicap: 3,
         plusMinus: -4,
       },
       {
-        name: 'Jared',
-        handicap: 3,
-        plusMinus: -4,
+        label: 'Sam',
+        handicap: 10,
+        plusMinus: -9,
       }
     ]
 
@@ -45,7 +45,7 @@ class Profile extends Component {
             className="avatar-header"
           />
           <Divider />
-          <DataTable data={data}/>
+          <DataTable columns={columns} data={data}/>
           <button className="button primary-button">
             Add stats
           </button>

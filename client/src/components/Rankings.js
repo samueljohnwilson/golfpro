@@ -9,6 +9,7 @@ import DataTable from './DataTable';
 
 class Rankings extends Component {
   render() {
+    const columns = ['Name', 'Handicap', '+/-'];
     const data = [
       {
         name: 'Jared',
@@ -31,7 +32,7 @@ class Rankings extends Component {
             className="avatar-header"
           />
           <Divider />
-          <DataTable data={data} />
+          <DataTable columns={columns} data={data} />
         </CardContent>
       </Card>
     );
